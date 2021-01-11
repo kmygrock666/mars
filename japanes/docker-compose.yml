@@ -1,0 +1,51 @@
+version: "3"
+services:
+    db:
+        image: mysql:5.7
+        container_name: "db"
+        volumes:
+            - mysql-data:/var/lib/mysql
+            - $PWD/mysql/sqls:/docker-entrypoint-initdb.d
+        ports:
+            - "3306:3306"
+        command:
+            - --innodb-use-native-aio=0
+            - --explicit_defaults_for_timestamp
+            - --lower_case_table_names=2
+            - --default-authentication-plugin=mysql_native_password
+            - --character-set-server=utf8mb4
+        environment:
+            MYSQL_ROOT_PASSWORD: mypassword
+            MYSQL_DATABASE: myjapan
+        restart: always
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: "phpmyadmin"
+        environment:
+            PMA_ARBITRARY: 1
+            PMA_HOST: db
+            PMA_USER: root
+            PMA_PASSWORD: mypassword
+        ports:
+            - "8080:80"
+        links:
+            - db
+        volumes:
+            - pma-sessions:/sessions
+        restart: always
+    app:
+        tty: true
+        build: $PWD
+        container_name: "app"
+        volumes:
+            - $PWD:/go/src/japanes
+        ports:
+            - "80:80"
+        links:
+            - db
+        restart: always
+volumes:
+    mysql-data:
+        driver: local
+    pma-sessions:
+        driver: local
