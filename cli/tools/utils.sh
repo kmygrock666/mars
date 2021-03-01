@@ -26,7 +26,7 @@ ${CYAN}指令: galaxy {指令} [參數]${RESTORE}
 
 env...............基本資訊(ex. galaxy 安裝路徑)
 start.............啟動開發環境
-     ${REPO_NAME}...........參數：mars start${REPO_NAME} 
+     ${MAGENTA}.............參數：mars start${LGREEN}{REPO_NAME}${RESTORE}
 stop..............關閉開發環境
 godev.............Golang 開發模式，可以直接在 k8s 內部開發，不需要重新build image 之後還要用 kubectl 更新 pod
      ${MAGENTA}.............參數：galaxy godev${RESTORE} ${LGREEN}{REPO_NAME}${RESTORE}

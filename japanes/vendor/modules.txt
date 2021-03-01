@@ -1,17 +1,17 @@
+# github.com/bwmarrin/snowflake v0.3.0
+github.com/bwmarrin/snowflake
 # github.com/caarlos0/env v3.5.0+incompatible
 github.com/caarlos0/env
 # github.com/fatih/structs v1.1.0
 github.com/fatih/structs
-# github.com/go-sql-driver/mysql v1.4.0
+# github.com/go-sql-driver/mysql v1.5.0
 github.com/go-sql-driver/mysql
-# github.com/gorilla/mux v1.7.4
+# github.com/gorilla/mux v1.8.0
 github.com/gorilla/mux
-# github.com/iancoleman/strcase v0.1.2
+# github.com/iancoleman/strcase v0.1.3
 github.com/iancoleman/strcase
-# github.com/jmoiron/sqlx v1.2.0
+# github.com/jmoiron/sqlx v1.3.1
 github.com/jmoiron/sqlx
 github.com/jmoiron/sqlx/reflectx
 # github.com/subosito/gotenv v1.2.0
 github.com/subosito/gotenv
-# google.golang.org/appengine v1.6.7
-google.golang.org/appengine/cloudsql
